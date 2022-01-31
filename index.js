@@ -5,6 +5,7 @@ import figlet from "figlet";
 import gradient from "gradient-string";
 import inquirer from "inquirer";
 
+let sleep = (ms = 2000) => new Promise(resolve => setTimeout(resolve, ms));
 
 async function Welcome(){
     console.clear()
@@ -14,4 +15,26 @@ async function Welcome(){
     })
 }
 
+
+async function howToPlay(){
+    console.log(`
+        Hello and welcome to the game!
+        the goal is to get 20 points in total, guessing the correct answer willa ward you a certain amount fo points 
+        there are four differnt difficulties of question the harder the difficulty the more points it gives you 
+        you have 3 lives, after that you will loose the game 
+
+        now do you understand
+    `)
+
+    const confirm = inquirer.prompt({
+        type: "input",
+        question: "do you understand (y/n)"
+    })
+
+    
+}
+
+
 await Welcome()
+await sleep(1000)
+await howToPlay()
