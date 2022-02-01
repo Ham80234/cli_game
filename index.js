@@ -27,11 +27,18 @@ async function howToPlay(){
     `)
 
     const confirm = inquirer.prompt({
+        name: "answer",
         type: "input",
         question: "do you understand (y/n)"
     })
 
-    
+    if ((await confirm).answer == 'y'){
+        console.log('good')
+    }else{
+        chalkAnimation.glitch("goodbye loser ")
+        await sleep(3000)
+        process.exit(0)
+    }
 }
 
 
