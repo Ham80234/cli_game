@@ -44,4 +44,4 @@ async function howToPlay(){
 
 await Welcome()
 await sleep(1000)
-await howToPlay()
+await howToPlay()   
